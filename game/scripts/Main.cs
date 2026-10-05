@@ -6211,7 +6211,7 @@ public partial class Main : Node2D
         // P1 is always the top-team controller (tests force AI-vs-AI). Needed
         // both for TeamData wiring below and for the ScaleSkill price feedback
         // (CPU teams pin the price percent to 100, swos.asm:37691-37695).
-        bool topIsHuman    = !_forceBothTeamsCpu;
+        bool topIsHuman    = !_forceBothTeamsCpu && _opponentMode != OpponentMode.Demo;
         bool bottomIsHuman = !_forceBothTeamsCpu && _opponentMode == OpponentMode.Player2;
 
         // PlayerInfo records — 16 × 61 bytes per team starting at
